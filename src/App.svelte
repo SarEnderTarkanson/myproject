@@ -1,9 +1,13 @@
 <script>
 	let people = [
-		// { name: "Ender", beltColor: "black", age: 6, id: 1 },
-		// { name: "Sare", beltColor: "pink", age: 9, id: 2 },
-		// { name: "Makbule", beltColor: "black", age: 38, id: 3 },
+		{ name: "Ender", beltColor: "black", age: 6, id: 1 },
+		{ name: "Sare", beltColor: "pink", age: 9, id: 2 },
+		{ name: "Makbule", beltColor: "black", age: 38, id: 3 },
 	];
+
+	const handleClick = (id) => {
+		people = people.filter((person) => person.id != id);
+	};
 </script>
 
 <main>
@@ -11,6 +15,7 @@
 		<div>
 			<h4>{person.name}</h4>
 			<p>{person.age} years old, {person.beltColor} belt.</p>
+			<button on:click={() => handleClick(person.id)}>delete</button>
 		</div>
 	{:else}
 		<p>There are no people to show...</p>
