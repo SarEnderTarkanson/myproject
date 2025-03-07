@@ -33,6 +33,7 @@
         <option value="Brown">Brown</option>
         <option value="White">White</option>
     </select>
+    <br />
     <button>Add Person</button>
 </form>
 
