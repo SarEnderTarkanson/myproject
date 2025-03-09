@@ -18,11 +18,16 @@
     people = people.filter((person) => person.id != id);
   };
 
-  let num = 5;
+  const addPerson = (e) => {
+    //console.log(e.detail);
+    const person = e.detail;
+    people = [person, ...people];
+    showModal = false
+  };
 </script>
 
 <Modal {showModal} on:click={toggleModal}>
-  <AddPersonForm />
+  <AddPersonForm on:addPerson={addPerson} />
 </Modal>
 
 <main>
